@@ -20,6 +20,6 @@ public class TestSort {
 
         Bubble.sort(new ArrayList<Integer>(data));
         InsertionSort.sort(new ArrayList<Integer>(data));
-
     }
+
 }
