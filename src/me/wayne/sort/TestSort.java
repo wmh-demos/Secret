@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import me.wayne.sort.stable.Bubble;
+import me.wayne.sort.stable.BubbleSort;
 import me.wayne.sort.stable.InsertionSort;
 
 public class TestSort {
@@ -18,7 +18,7 @@ public class TestSort {
         List<Integer> data = Arrays.asList(ARRAY);
         System.out.println("raw data :\n" + data.toString());
 
-        Bubble.sort(new ArrayList<Integer>(data));
+        BubbleSort.sort(new ArrayList<Integer>(data));
         InsertionSort.sort(new ArrayList<Integer>(data));
     }
 
