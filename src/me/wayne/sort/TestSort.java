@@ -20,7 +20,9 @@ public class TestSort {
         System.out.println("raw data :\n" + data.toString());
 
         BubbleSort.sort(new ArrayList<Integer>(data));
+
         InsertionSort.sort(new ArrayList<Integer>(data));
+
         System.out.println(MergeSort.sort(new ArrayList<Integer>(data)));
     }
 

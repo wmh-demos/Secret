@@ -10,6 +10,7 @@ public class MergeSort {
      * 归并排序,稳定
      * 时间复杂度O(n*log2n)
      * 空间复杂度O(n)
+     * 思想:从中间将序列分为两组,再依次递归,最后将两个数组按次序合并起来
      */
     public static List<Integer> sort(List<Integer> data) {
         if (data.size() > 1) {
