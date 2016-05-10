@@ -7,6 +7,7 @@ import java.util.List;
 import me.wayne.sort.stable.BubbleSort;
 import me.wayne.sort.stable.InsertionSort;
 import me.wayne.sort.stable.MergeSort;
+import me.wayne.sort.unstable.HeapSort;
 
 public class TestSort {
 
@@ -24,6 +25,8 @@ public class TestSort {
         InsertionSort.sort(new ArrayList<Integer>(data));
 
         System.out.println(MergeSort.sort(new ArrayList<Integer>(data)));
+
+        HeapSort.sort(new ArrayList<Integer>(data));
     }
 
 }
