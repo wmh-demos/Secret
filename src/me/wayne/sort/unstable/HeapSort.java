@@ -28,29 +28,22 @@ public class HeapSort {
     }
 
     /***
-     * @param index 堆调整起始位置
-     * @param len 堆调整结束位置
+     * @param start 堆调整起始位置
+     * @param end 堆调整结束位置
      * 堆调整函数,给定起始和结束位置
      */
-    private static void maxHeapFix(List<Integer> data, int len, int index) {
-        int dadValue = data.get(index);
-        int son = index * 2 + 1;
-        while (son < len) {
-            if (son + 1 < len && data.get(son + 1) > data.get(son)) {
+    private static void maxHeapFix(List<Integer> data, int end, int start) {
+        for (int son = start * 2 + 1; son + 1 < end; start = son, son = son * 2 + 1) {
+            if (son + 1 < end && data.get(son + 1) > data.get(son)) {
                 //获取两个子结点中较大的结点的引用
                 son++;
             }
 
             //判断子结点与父结点大小
-            if (data.get(son) < dadValue) {
-                break;
+            if (data.get(son) > data.get(start)) {
+                //将子结点挪到父结点
+                SortUtils.swap(data, son, start);
             }
-
-            //将子结点挪到父结点
-            data.set(index, data.get(son));
-            index = son;
-            son = son * 2 + 1;
         }
-        data.set(index, dadValue);
     }
 }
