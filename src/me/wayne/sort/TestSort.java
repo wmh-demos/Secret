@@ -1,13 +1,8 @@
 package me.wayne.sort;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import me.wayne.sort.stable.BubbleSort;
-import me.wayne.sort.stable.InsertionSort;
-import me.wayne.sort.stable.MergeSort;
-import me.wayne.sort.unstable.HeapSort;
 
 public class TestSort {
 
@@ -20,13 +15,5 @@ public class TestSort {
         List<Integer> data = Arrays.asList(ARRAY);
         System.out.println("raw data :\n" + data.toString());
 
-        BubbleSort.sort(new ArrayList<Integer>(data));
-
-        InsertionSort.sort(new ArrayList<Integer>(data));
-
-        System.out.println(MergeSort.sort(new ArrayList<Integer>(data)));
-
-        HeapSort.sort(new ArrayList<Integer>(data));
     }
-
 }
