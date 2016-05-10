@@ -10,10 +10,12 @@ public class HeapSort {
      * 堆排序,不稳定
      * 时间复杂度O(n*log2n)
      * 空间复杂度O(1)
+     * 思路:从最后一个非终端节点建一个大顶堆
+     * 然后依次将堆顶元素放到最后再重新调整堆
      */
     public static void sort(List<Integer> data) {
 
-        //从最后一个非终端结点开始建堆
+        //从最后一个非终端结点开始建大顶堆
         int i;
         for (i = data.size() / 2 - 1; i >= 0; i--) {
             maxHeapFix(data, data.size(), i);
