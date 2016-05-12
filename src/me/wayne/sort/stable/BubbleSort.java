@@ -15,9 +15,9 @@ public class BubbleSort {
      */
     public static void sort(List<Integer> data) {
         for (int i = 0; i < data.size() - 1; i++) {
-            for (int j = i + 1; j < data.size(); j++) {
-                if (data.get(i) > data.get(j)) {
-                    SortUtils.swap(data, i, j);
+            for (int j = 0; j < data.size() - 1 - i; j++) {
+                if (data.get(j) > data.get(j + 1)) {
+                    SortUtils.swap(data, j, j + 1);
                 }
             }
         }
