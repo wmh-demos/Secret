@@ -15,8 +15,8 @@ public class MergeSort {
     public static List<Integer> sort(List<Integer> data) {
         if (data.size() > 1) {
             int halfSize = data.size() / 2;
-            List<Integer> data1 = sort(new ArrayList<Integer>(data.subList(0, halfSize)));
-            List<Integer> data2 = sort(new ArrayList<Integer>(data.subList(halfSize, data.size())));
+            List<Integer> data1 = sort(data.subList(0, halfSize));
+            List<Integer> data2 = sort(data.subList(halfSize, data.size()));
             return mergeArray(data1, data2);
         } else {
             return data;
