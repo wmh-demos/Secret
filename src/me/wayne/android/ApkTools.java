@@ -42,19 +42,26 @@ public class ApkTools {
                 storedFiles.add(entry.getName());
             }
 
-            BufferedInputStream bis = new BufferedInputStream(zipFile.getInputStream(entry));
+//            BufferedInputStream bis = new BufferedInputStream(zipFile.getInputStream(entry));
+//            FileOutputStream fos = new FileOutputStream(file);
+//            BufferedOutputStream bos = new BufferedOutputStream(fos, BUFFER);
+//
+//            byte[] buf = new byte[BUFFER];
+//            int len;
+//            while ((len = bis.read(buf, 0, BUFFER)) != -1) {
+//                fos.write(buf, 0, len);
+//            }
+//
+//            bos.flush();
+//            bos.close();
+//            bis.close();
+            InputStream is = zipFile.getInputStream(entry);
             FileOutputStream fos = new FileOutputStream(file);
-            BufferedOutputStream bos = new BufferedOutputStream(fos, BUFFER);
-
-            byte[] buf = new byte[BUFFER];
-            int len;
-            while ((len = bis.read(buf, 0, BUFFER)) != -1) {
-                fos.write(buf, 0, len);
+            while (is.available() > 0) {
+                fos.write(is.read());
             }
-
-            bos.flush();
-            bos.close();
-            bis.close();
+            fos.close();
+            is.close();
         }
         zipFile.close();
         return storedFiles;
