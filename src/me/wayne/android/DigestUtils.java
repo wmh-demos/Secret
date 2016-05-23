@@ -1,4 +1,4 @@
-package me.wayne.digest;
+package me.wayne.android;
 
 import java.io.FileInputStream;
 import java.security.MessageDigest;
