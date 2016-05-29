@@ -1,8 +1,9 @@
 package me.wayne.android;
 
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 import java.io.FileInputStream;
 import java.security.MessageDigest;
-import java.util.Base64;
 
 public class DigestUtils {
 
@@ -17,7 +18,7 @@ public class DigestUtils {
             }
             in.close();
             byte[] result = md.digest();
-            sha1 = new String(Base64.getEncoder().encode(result));
+            sha1 = Base64.encode(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
