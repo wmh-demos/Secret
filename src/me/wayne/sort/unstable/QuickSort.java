@@ -1,6 +1,7 @@
 package me.wayne.sort.unstable;
 
 import java.util.List;
+import java.util.Stack;
 
 import me.wayne.sort.SortUtils;
 
@@ -15,7 +16,9 @@ public class QuickSort {
      * 再对两部分进行递归调用
      */
     public static void sort(List<Integer> data) {
-        quickSort(data, 0, data.size() - 1);
+//        quickSort(data, 0, data.size() - 1);
+//        System.out.println(data.toString());
+        nonRecursionSort(data);
         System.out.println(data.toString());
     }
 
@@ -45,5 +48,28 @@ public class QuickSort {
         //将基准数换到正确的位置
         SortUtils.swap(data, index, end);
         return index;
+    }
+
+    private static void nonRecursionSort(List<Integer> data) {
+        Stack<Integer> stack = new Stack<Integer>();
+
+        int start = 0, end = data.size() - 1, partition;
+        stack.push(start);
+        stack.push(end);
+
+        while (!stack.isEmpty()) {
+            end = stack.pop();
+            start = stack.pop();
+            partition = partition(data, start, end);
+            if (partition - start > 1) {
+                stack.push(start);
+                stack.push(partition - 1);
+            }
+            if (end - partition > 1) {
+                stack.push(partition + 1);
+                stack.push(end);
+            }
+        }
+
     }
 }
