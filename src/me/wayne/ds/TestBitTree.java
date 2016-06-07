@@ -4,9 +4,13 @@ public class TestBitTree {
 
     public static void test() {
         BitTree bitTree = createBitTree();
+
+        System.out.println("preOrder : ");
+        Traverse.preOrder(bitTree);
+        Traverse.nonRecursionPreOrder(bitTree);
     }
 
-    public static BitTree createBitTree() {
+    private static BitTree createBitTree() {
         BitTree tree = new BitTree();
         tree.value = 7;
 
