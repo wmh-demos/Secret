@@ -9,8 +9,13 @@ public class StaticProxyFactory {
         return new FontProviderA();
     }
 
-    //考虑以下各种情况，有多个提供类，每个类都有getXxx(String name)方法，
-    // 使用静态代理虽然也能实现，但是也是略显繁琐，需要手动一一创建代理类。
-//    public static ImageProvider getImageProvider() {...}
-//    public static MusicProvider getMusicProvider() {...}
+    /**
+     * 当然，我们直接修改FontProviderFromDisk类也可以实现目的，
+     * 但是我们还有FontProviderFromNet, FontProviderFromSystem等多种实现类，
+     * 一一修改太过繁琐且易出错。况且将来还可能添加日志，权限检查，
+     * 异常处理等功能显然用代理类更好一点。
+     */
+    public static FontProvider getCachedFontProvider() {
+        return new CachedFontProvider(new FontProviderA());
+    }
 }
