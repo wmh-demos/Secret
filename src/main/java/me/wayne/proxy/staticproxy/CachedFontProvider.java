@@ -1,9 +1,10 @@
-package wayne.proxy.staticproxy;
+package me.wayne.proxy.staticproxy;
+
+
+import me.wayne.proxy.Font;
+import me.wayne.proxy.FontProvider;
 
 import java.util.Map;
-
-import wayne.proxy.Font;
-import wayne.proxy.FontProvider;
 
 public class CachedFontProvider implements FontProvider {
 

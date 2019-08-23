@@ -1,4 +1,4 @@
-package wayne.android;
+package me.wayne.android;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package wayne.ds;
+package me.wayne.ds;
 
 public class BitTree {
 

@@ -1,4 +1,4 @@
-package wayne.sort.stable;
+package me.wayne.sort.stable;
 
 
 import java.util.ArrayList;

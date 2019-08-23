@@ -1,4 +1,4 @@
-package wayne.ds;
+package me.wayne.ds;
 
 import java.util.Stack;
 

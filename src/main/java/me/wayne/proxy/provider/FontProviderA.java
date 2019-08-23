@@ -1,7 +1,8 @@
-package wayne.proxy.provider;
+package me.wayne.proxy.provider;
 
-import wayne.proxy.Font;
-import wayne.proxy.FontProvider;
+
+import me.wayne.proxy.Font;
+import me.wayne.proxy.FontProvider;
 
 public class FontProviderA implements FontProvider {
     @Override

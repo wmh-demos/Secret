@@ -1,9 +1,10 @@
-package wayne.proxy.dynamicproxy;
+package me.wayne.proxy.dynamicproxy;
+
+import me.wayne.proxy.FontProvider;
+import me.wayne.proxy.provider.FontProviderA;
 
 import java.lang.reflect.Proxy;
 
-import wayne.proxy.FontProvider;
-import wayne.proxy.provider.FontProviderA;
 
 public class DynamicProxyFactory {
 

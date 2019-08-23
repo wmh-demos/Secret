@@ -1,7 +1,8 @@
-package wayne.proxy.staticproxy;
+package me.wayne.proxy.staticproxy;
 
-import wayne.proxy.FontProvider;
-import wayne.proxy.provider.FontProviderA;
+
+import me.wayne.proxy.FontProvider;
+import me.wayne.proxy.provider.FontProviderA;
 
 public class StaticProxyFactory {
 

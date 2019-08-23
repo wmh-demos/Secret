@@ -1,4 +1,4 @@
-package wayne.sort;
+package me.wayne.sort;
 
 import java.util.List;
 

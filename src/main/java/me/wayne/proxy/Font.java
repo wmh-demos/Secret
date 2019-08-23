@@ -1,4 +1,4 @@
-package wayne.proxy;
+package me.wayne.proxy;
 
 public class Font {
     public String name;

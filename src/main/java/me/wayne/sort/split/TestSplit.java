@@ -1,4 +1,4 @@
-package wayne.sort.split;
+package me.wayne.sort.split;
 
 import java.util.ArrayList;
 import java.util.List;

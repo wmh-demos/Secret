@@ -1,8 +1,9 @@
-package wayne.sort.stable;
+package me.wayne.sort.stable;
+
+import me.wayne.sort.SortUtils;
 
 import java.util.List;
 
-import wayne.sort.SortUtils;
 
 public class BubbleSort {
 

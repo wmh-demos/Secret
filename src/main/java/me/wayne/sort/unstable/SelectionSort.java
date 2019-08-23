@@ -1,8 +1,9 @@
-package wayne.sort.unstable;
+package me.wayne.sort.unstable;
+
+import me.wayne.sort.SortUtils;
 
 import java.util.List;
 
-import wayne.sort.SortUtils;
 
 public class SelectionSort {
 

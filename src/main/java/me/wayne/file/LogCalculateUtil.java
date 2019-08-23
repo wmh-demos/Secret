@@ -1,6 +1,4 @@
-package wayne.file;
-
-import com.sun.istack.internal.Nullable;
+package me.wayne.file;
 
 import java.io.*;
 import java.text.DecimalFormat;
@@ -47,7 +45,7 @@ public class LogCalculateUtil {
         System.out.println("totalCount : " + totalCount + " rate : " + (totalCount == 0 ? 0 : df.format(totalRate / totalCount)));
     }
 
-    private static void close(@Nullable Closeable target) {
+    private static void close(Closeable target) {
         if (target != null) {
             try {
                 target.close();
