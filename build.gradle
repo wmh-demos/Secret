@@ -1,0 +1,24 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building a CLI application
+    id 'application'
+}
+
+
+group 'me.wayne'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.2'
+}
+
+application {
+    // Define the main class for the application
+    mainClassName = 'me.wayne.Main'
+}

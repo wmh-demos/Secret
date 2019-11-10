@@ -1,14 +1,14 @@
 package me.wayne.android;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 import java.io.FileInputStream;
 import java.security.MessageDigest;
+import java.util.Base64;
 
 public class DigestUtils {
 
     public static String getSHA1(String filePath) {
-        String sha1 = null;
+        byte[] sha1 = null;
         try {
             MessageDigest md = MessageDigest.getInstance("sha-1");
             FileInputStream in = new FileInputStream(filePath);
@@ -18,11 +18,11 @@ public class DigestUtils {
             }
             in.close();
             byte[] result = md.digest();
-            sha1 = Base64.encode(result);
+            sha1 = Base64.getEncoder().encode(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("getSHA1 : " + sha1);
-        return sha1;
+        return sha1 == null ? "" : new String(sha1);
     }
 }

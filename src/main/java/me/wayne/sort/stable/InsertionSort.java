@@ -1,8 +1,8 @@
 package me.wayne.sort.stable;
 
-import java.util.List;
-
 import me.wayne.sort.SortUtils;
+
+import java.util.List;
 
 public class InsertionSort {
 
