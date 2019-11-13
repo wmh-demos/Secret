@@ -9,4 +9,10 @@ public class SortUtils {
         data.set(i, data.get(j));
         data.set(j, temp);
     }
+
+    public static void swap(Integer[] arr, int i, int j) {
+        int temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+    }
 }
