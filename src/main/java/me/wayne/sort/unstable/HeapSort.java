@@ -19,13 +19,13 @@ public class HeapSort {
         //从最后一个非终端结点开始建大顶堆
         int i;
         for (i = data.size() / 2 - 1; i >= 0; i--) {
-            maxHeapFix(data, data.size(), i);
+            maxHeapFix(data, data.size() - 1, i);
         }
 
         //不断的将最大的数挪到最后一个,然后再第0个数开始调整堆
         for (i = data.size() - 1; i >= 1; i--) {
             SortUtils.swap(data, i, 0);
-            maxHeapFix(data, i, 0);
+            maxHeapFix(data, i - 1, 0);
         }
         System.out.println(data.toString());
     }
@@ -36,8 +36,8 @@ public class HeapSort {
      * 堆调整函数,给定起始和结束位置
      */
     private static void maxHeapFix(List<Integer> data, int end, int start) {
-        for (int son = start * 2 + 1; son + 1 < end; start = son, son = son * 2 + 1) {
-            if (son + 1 < end && data.get(son + 1) > data.get(son)) {
+        for (int son = start * 2 + 1; son <= end; start = son, son = son * 2 + 1) {
+            if (son + 1 <= end && data.get(son + 1) > data.get(son)) {
                 //获取两个子结点中较大的结点的引用
                 son++;
             }
