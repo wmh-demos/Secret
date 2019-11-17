@@ -17,10 +17,10 @@ public class QuickSort {
      * 再对两部分进行递归调用
      */
     public static void sort(List<Integer> data) {
-//        quickSort(data, 0, data.size() - 1);
-//        System.out.println(data.toString());
-        nonRecursionSort(data);
+        quickSort(data, 0, data.size() - 1);
         System.out.println(data.toString());
+//        nonRecursionSort(data);
+//        System.out.println(data.toString());
     }
 
     private static void quickSort(List<Integer> data, int start, int end) {
