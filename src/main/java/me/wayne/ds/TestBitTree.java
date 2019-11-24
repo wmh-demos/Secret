@@ -1,16 +1,20 @@
 package me.wayne.ds;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TestBitTree {
 
     public static void test() {
         BitTree bitTree = createBitTree();
+        traverse(bitTree);
     }
 
     /**
-     *        7
-     *     4    10
-     *   3  5  8  11
-     *       6  9
+     * 7
+     * 4    10
+     * 3  5  8  11
+     * 6  9
      */
     private static BitTree createBitTree() {
         BitTree tree = new BitTree();
@@ -49,5 +53,22 @@ public class TestBitTree {
         eight.right = night;
 
         return tree;
+    }
+
+    private static void traverse(BitTree bitTree) {
+        Queue<BitTree> queue = new LinkedList<>();
+        queue.offer(bitTree);
+
+        while (!queue.isEmpty()) {
+            BitTree node = queue.poll();
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+            System.out.print(node.value + " ");
+        }
     }
 }
