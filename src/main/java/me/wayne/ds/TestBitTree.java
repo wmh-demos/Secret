@@ -4,24 +4,14 @@ public class TestBitTree {
 
     public static void test() {
         BitTree bitTree = createBitTree();
-
-        System.out.println("preOrder : ");
-        Traverse.preOrder(bitTree);
-        System.out.println();
-        Traverse.nonRecursionPreOrder(bitTree);
-        System.out.println();
-
-        System.out.println("inOrder : ");
-        Traverse.inOrder(bitTree);
-        System.out.println();
-        Traverse.nonRecursionInOrder(bitTree);
-        System.out.println();
-
-        System.out.println("postOrder : ");
-        Traverse.postOrder(bitTree);
-        System.out.println();
     }
 
+    /**
+     *        7
+     *     4    10
+     *   3  5  8  11
+     *       6  9
+     */
     private static BitTree createBitTree() {
         BitTree tree = new BitTree();
         tree.value = 7;
