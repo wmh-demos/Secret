@@ -1,8 +1,8 @@
 package me.wayne.ds;
 
-public class BitTree {
+class BitTree {
 
-    public int value;
-    public BitTree left;
-    public BitTree right;
+    int value;
+    BitTree left;
+    BitTree right;
 }
