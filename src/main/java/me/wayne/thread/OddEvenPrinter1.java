@@ -12,11 +12,16 @@ public class OddEvenPrinter1 implements IPrinter {
     }
 
     public void print() {
-        synchronized (mLock) {
-            while (mInitValue < mLimit) {
+        while (mInitValue < mLimit) {
+            synchronized (mLock) {
                 System.out.println(String.format("线程[%s]打印数字:%d",
                         Thread.currentThread().getName(), ++mInitValue));
                 mLock.notifyAll();
+
+                if (mInitValue == mLimit) {
+                    return;
+                }
+
                 try {
                     mLock.wait();
                 } catch (InterruptedException e) {
