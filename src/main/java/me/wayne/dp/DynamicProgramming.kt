@@ -5,12 +5,14 @@ import kotlin.math.max
 val ARR = arrayListOf(1, 2, 4, 1, 7, 8, 3)
 
 fun main() {
-    println("recOpt = " + recOpt(ARR, 6))
+    println("recOpt1 = " + recOpt1(ARR, 6))
 
-    println("dpOpt = " + dpOpt(ARR, 6))
+    println("dpOpt1 = " + dpOpt1(ARR, 6))
+
+    println("recOpt2 = " + recOpt2(ARR, 6, 19))
 }
 
-fun recOpt(arr: List<Int>, index: Int): Int {
+fun recOpt1(arr: List<Int>, index: Int): Int {
     return when (index) {
         0 -> {
             arr[0]
@@ -19,14 +21,14 @@ fun recOpt(arr: List<Int>, index: Int): Int {
             max(arr[0], arr[1])
         }
         else -> {
-            val choose = arr[index] + recOpt(arr, index - 2)
-            val giveUp = recOpt(arr, index - 1)
+            val choose = arr[index] + recOpt1(arr, index - 2)
+            val giveUp = recOpt1(arr, index - 1)
             max(choose, giveUp)
         }
     }
 }
 
-fun dpOpt(arr: List<Int>, index: Int): Int {
+fun dpOpt1(arr: List<Int>, index: Int): Int {
     val resultArr = mutableListOf<Int>()
     resultArr.add(0, arr[0])
     resultArr.add(1, max(arr[0], arr[1]))
@@ -36,4 +38,23 @@ fun dpOpt(arr: List<Int>, index: Int): Int {
         resultArr.add(i, max(choose, giveUp))
     }
     return resultArr[index]
+}
+
+fun recOpt2(arr: List<Int>, index: Int, value: Int): Boolean {
+    return when {
+        value == 0 -> {
+            true
+        }
+        index == 0 -> {
+            arr[index] == value
+        }
+        arr[index] > value -> {
+            return recOpt2(arr, index - 1, value)
+        }
+        else -> {
+            val choose = recOpt2(arr, index - 1, value - arr[index])
+            val giveUp = recOpt2(arr, index - 1, value)
+            choose || giveUp
+        }
+    }
 }
