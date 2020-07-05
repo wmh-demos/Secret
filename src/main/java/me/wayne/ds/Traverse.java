@@ -1,6 +1,9 @@
 package me.wayne.ds;
 
+import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.LinkedBlockingQueue;
 
 class Traverse {
 
@@ -65,6 +68,44 @@ class Traverse {
                 tree = stack.pop();
                 System.out.print(tree.value + " ");
                 tree = tree.right;
+            }
+        }
+    }
+
+    static void dfsMultiTreeNode(MultiTreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<MultiTreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            MultiTreeNode node = stack.pop();
+            System.out.println(node.value() + "\t");
+
+            List<MultiTreeNode> children = node.getChildren();
+            if (children != null && !children.isEmpty()) {
+                for (int i = children.size() - 1; i >= 0; i--) {
+                    stack.push(children.get(i));
+                }
+            }
+        }
+    }
+
+    static void bfdMultiTreeNode(MultiTreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Queue<MultiTreeNode> queue = new LinkedBlockingQueue<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            MultiTreeNode first = queue.poll();
+            System.out.println(first.value() + "\t");
+
+            List<MultiTreeNode> children = first.getChildren();
+            if (children != null && children.size() > 0) {
+                queue.addAll(children);
             }
         }
     }
