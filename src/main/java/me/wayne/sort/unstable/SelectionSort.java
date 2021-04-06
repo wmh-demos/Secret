@@ -13,10 +13,10 @@ public class SelectionSort {
      * 思路:每次寻找找到一个最大或最小的值,交换位置
      */
     public static void sort(List<Integer> data) {
-        int i, j, min;
-        for (i = 0; i < data.size(); i++) {
+        int min;
+        for (int i = 0; i < data.size() - 1; i++) {
             min = i;
-            for (j = i + 1; j < data.size(); j++) {
+            for (int j = i; j < data.size(); j++) {
                 if (data.get(j) < data.get(min)) {
                     min = j;
                 }
