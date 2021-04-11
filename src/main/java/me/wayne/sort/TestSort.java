@@ -1,5 +1,11 @@
 package me.wayne.sort;
 
+import me.wayne.sort.stable.BubbleSort;
+import me.wayne.sort.stable.InsertionSort;
+import me.wayne.sort.unstable.SelectionSort;
+
+import java.util.Arrays;
+
 public class TestSort {
 
     private static final Integer[] ARRAY1 =
@@ -7,8 +13,11 @@ public class TestSort {
     private static final Integer[] ARRAY2 = {1, 6, 7, 2, 3, 4, 5};
 
     public static void sort() {
-//        BubbleSort.sort(Arrays.asList(ARRAY1));
-//        BubbleSort.sort(Arrays.asList(ARRAY2));
+        BubbleSort.sort(Arrays.asList(ARRAY1));
+        BubbleSort.sort(Arrays.asList(ARRAY2));
+
+        SelectionSort.sort(Arrays.asList(ARRAY1));
+        SelectionSort.sort(Arrays.asList(ARRAY2));
 
 //        InsertionSort.sort(Arrays.asList(ARRAY1));
 //        InsertionSort.sort(Arrays.asList(ARRAY2));
