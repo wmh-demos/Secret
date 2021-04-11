@@ -21,6 +21,6 @@ public class InsertionSort {
                 }
             }
         }
-        System.out.println(data.toString());
+        System.out.println(data);
     }
 }

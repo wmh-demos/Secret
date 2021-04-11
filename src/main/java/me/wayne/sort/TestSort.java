@@ -19,8 +19,8 @@ public class TestSort {
         SelectionSort.sort(Arrays.asList(ARRAY1));
         SelectionSort.sort(Arrays.asList(ARRAY2));
 
-//        InsertionSort.sort(Arrays.asList(ARRAY1));
-//        InsertionSort.sort(Arrays.asList(ARRAY2));
+        InsertionSort.sort(Arrays.asList(ARRAY1));
+        InsertionSort.sort(Arrays.asList(ARRAY2));
 
 //        System.out.println(MergeSort.sort(Arrays.asList(ARRAY1)));
 //        System.out.println(MergeSort.sort(Arrays.asList(ARRAY2)));
