@@ -1,4 +1,4 @@
-package me.wayne.leetcode;
+package me.wayne.leetcodetop100;
 
 import java.util.HashMap;
 import java.util.Map;
