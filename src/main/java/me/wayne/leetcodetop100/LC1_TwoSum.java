@@ -12,7 +12,7 @@ import java.util.Map;
  * https://leetcode-cn.com/problems/two-sum
  */
 @SuppressWarnings("UnnecessaryLocalVariable")
-public class TwoSum {
+public class LC1_TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
 
