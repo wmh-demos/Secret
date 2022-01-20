@@ -10,6 +10,9 @@ import java.util.Map;
  * 你可以按任意顺序返回答案。
  * <p>
  * https://leetcode-cn.com/problems/two-sum
+ *
+ * 思路：通过一个Map来保存nums中的值与下标，遍历nums时，得到一个 int result2 = target - nums[i]
+ * 如果Map中存在result2和它的下标，即得到了答案
  */
 @SuppressWarnings("UnnecessaryLocalVariable")
 public class LC1_TwoSum {
