@@ -6,16 +6,7 @@ package me.wayne.leetcodetop100;
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/
  */
 @SuppressWarnings("ALL")
-public class MergeTwoLists {
-
-    private class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
+public class LC21_MergeTwoLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
