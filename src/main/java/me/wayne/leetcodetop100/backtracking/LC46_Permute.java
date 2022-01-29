@@ -17,7 +17,10 @@ public class LC46_Permute {
             return res;
         }
 
+        // 通过回溯法得到结果，path用于保存单次遍历的结果
+        // 当path的长度等于nums的长度时，得到一个结果，拷贝至res中
         List<Integer> path = new ArrayList<>();
+        // 用于保存当前这次生成结果中是否已经包含了某个位置的值的数组
         boolean[] visited = new boolean[nums.length];
         dfs(path, res, nums, visited);
         return res;
@@ -31,6 +34,7 @@ public class LC46_Permute {
 
         for (int i = 0; i < nums.length; i++) {
             if (visited[i]) {
+                // 当前这次生成结果里已经有了nums[i]这个位置的数字，跳过
                 continue;
             }
 
