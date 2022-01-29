@@ -10,16 +10,10 @@ public class LC104_MaxDepth {
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
+        } else {
+            int leftHeight = maxDepth(root.left);
+            int rightHeight = maxDepth(root.right);
+            return Math.max(leftHeight, rightHeight) + 1;
         }
-        if (root.left == null && root.right == null) {
-            return 1;
-        }
-        if (root.left == null) {
-            return maxDepth(root.right) + 1;
-        }
-        if (root.right == null) {
-            return maxDepth(root.left) + 1;
-        }
-        return Math.max(maxDepth(root.left) + 1, maxDepth(root.right) + 1);
     }
 }
