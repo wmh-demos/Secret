@@ -11,6 +11,9 @@ import java.util.Arrays;
  */
 class LC300_LengthOfLIS {
 
+    /**
+     * Longest Increasing Subsequence
+     */
     public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -20,6 +23,9 @@ class LC300_LengthOfLIS {
         int[] dp = new int[nums.length];
         Arrays.fill(dp, 1);
         for (int i = 0; i < dp.length; i++) {
+            //j >= 0 且 < i，每轮计算dp[i]时，遍历[0, i}
+            //当nums[i]>nums[j]时，满足条件，LIS为dp[j] + 1
+            //当nums[i]<=nums[j]时，不满足条件，跳过
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[j] + 1, dp[i]);
