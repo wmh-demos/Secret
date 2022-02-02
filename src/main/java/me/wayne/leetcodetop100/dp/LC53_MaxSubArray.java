@@ -1,4 +1,4 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.dp;
 
 /**
  * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
@@ -9,7 +9,7 @@ package me.wayne.leetcodetop100;
  * <p>
  * https://leetcode-cn.com/problems/maximum-subarray/
  */
-public class MaxSubArray {
+public class LC53_MaxSubArray {
 
     /**
      * 思考状态：dp[i]代表着以nums[i]结尾的最大的子序列和。
