@@ -1,4 +1,4 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.dp;
 
 /**
  * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
@@ -9,7 +9,7 @@ package me.wayne.leetcodetop100;
  * <p>
  * https://leetcode-cn.com/problems/climbing-stairs/
  */
-public class ClimbStairs {
+public class LC70_ClimbStairs {
 
     public int climbStairs(int n) {
         if (n == 1) {
