@@ -1,4 +1,4 @@
-package me.wayne.dp;
+package me.wayne.leetcodetop100.dp;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 输出: 4
  * 解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
  */
-class LongestIncreasingSubsequence {
+class LC300_LengthOfLIS {
 
     public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) {
