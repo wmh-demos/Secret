@@ -38,8 +38,10 @@ public class Knapsack {
                     dp[i][0] = 0;
                 } else {
                     if (w < wt[i - 1]) {
+                        // 背包容量无法装下第i-1个商品，价值与dp[i - 1][w]相同
                         dp[i][w] = dp[i - 1][w];
                     } else {
+                        // 背包可以装下第i-1个商品，判断装与不装哪个价值高
                         dp[i][w] = Math.max(dp[i - 1][w - wt[i - 1]] + val[i - 1], dp[i - 1][w]);
                     }
                 }
