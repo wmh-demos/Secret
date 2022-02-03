@@ -1,22 +1,21 @@
-package me.wayne.dp;
-
-import java.util.Arrays;
+package me.wayne.leetcodetop100.dp;
 
 /**
  * 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
  * 输入: [1, 5, 11, 5]
  * 输出: true
  * 解释: 数组可以分割成 [1, 5, 5] 和 [11].
+ * <p>
+ * 转换为0-1背包问题。
+ * 思路：求出数组和的一半，定义一个数据dp[i][j]
+ * dp[i][j] = x 表示，对于前 i 个物品，当前背包的容量为 j 时
+ * 若 x 为 true，则说明可以恰好将背包装满，反之无法恰好将背包装满
+ * <p>
+ * https://leetcode-cn.com/problems/partition-equal-subset-sum/
  */
-public class Partition {
+public class LC416_CanPartition {
 
-    public static void main() {
-        int[] arr = {1, 1, 5, 1};
-        System.out.println("array " + Arrays.toString(arr)
-                + " has partition = " + (solution(arr)));
-    }
-
-    private static boolean solution(int[] nums) {
+    private static boolean canPartition(int[] nums) {
         int sum = 0;
         for (int num : nums) {
             sum += num;
@@ -41,15 +40,6 @@ public class Partition {
                 } else {
                     //装入或者不装入背包
                     dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
-                }
-            }
-        }
-
-        for (boolean[] booleans : dp) {
-            for (int j = 0; j < sum + 1; j++) {
-                System.out.print(booleans[j] + "\t");
-                if (j == sum) {
-                    System.out.println();
                 }
             }
         }
