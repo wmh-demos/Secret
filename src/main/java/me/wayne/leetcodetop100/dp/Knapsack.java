@@ -26,7 +26,7 @@ public class Knapsack {
     @SuppressWarnings("SameParameterValue")
     private static int solution(int totalWeight, int[] val, int[] wt) {
         int n = val.length;
-        // 定义dp数组：dp[i][j]表示背包容量为j时，容纳前i个物品能获得的最大价值
+        // 定义dp数组：dp[i][j] 表示从下标为[0-i]的物品里任意取一次，放进容量为j的背包，价值总和最大是多少
         int[][] dp = new int[n + 1][totalWeight + 1];
         for (int i = 0; i < n + 1; i++) {//遍历物品
             for (int w = 0; w < totalWeight + 1; w++) {//背包容量
@@ -42,6 +42,8 @@ public class Knapsack {
                         dp[i][w] = dp[i - 1][w];
                     } else {
                         // 背包可以装下第i-1个商品，判断装与不装哪个价值高
+                        // 不装第i-1个商品，最大价值dp[i - 1][w]
+                        // 装第i-1个商品，最大价值=当前价值val[i - 1] + 前一个商品除掉当前商品重量的最大价值dp[i - 1][w - wt[i - 1]]
                         dp[i][w] = Math.max(dp[i - 1][w - wt[i - 1]] + val[i - 1], dp[i - 1][w]);
                     }
                 }
