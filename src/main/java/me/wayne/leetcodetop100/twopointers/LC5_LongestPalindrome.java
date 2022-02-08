@@ -1,4 +1,4 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.twopointers;
 
 /**
  * 最长回文子串
