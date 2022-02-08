@@ -1,4 +1,6 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.listnode;
+
+import me.wayne.leetcodetop100.ListNode;
 
 /**
  * 删除链表的倒数第 N 个结点

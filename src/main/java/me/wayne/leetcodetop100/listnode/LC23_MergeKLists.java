@@ -1,4 +1,6 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.listnode;
+
+import me.wayne.leetcodetop100.ListNode;
 
 /**
  * 给你一个链表数组，每个链表都已经按升序排列。
