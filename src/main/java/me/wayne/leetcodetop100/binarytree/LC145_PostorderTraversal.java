@@ -6,6 +6,11 @@ import java.util.Stack;
 
 import me.wayne.leetcodetop100.TreeNode;
 
+/**
+ * 给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。
+ * <p>
+ * https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+ */
 @SuppressWarnings("ALL")
 public class LC145_PostorderTraversal {
 
