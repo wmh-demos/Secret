@@ -1,4 +1,4 @@
-package me.wayne.leetcodetop100;
+package me.wayne.leetcodetop100.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +33,8 @@ public class LC3_LengthOfLongestSubstring {
                 left = Math.max(lastChIndex + 1, left);
             }
 
+            //避免出现左指针回退的情况，所以使用Math.max，如"abba"，右指针滑动到第二个b时，左指针也应该滑动到第二个b
+            //然后再滑到到第二个a时，如果不加Math.max，左指针又滑动到第一个b了，不符合预期
             maxLength = Math.max(right - left + 1, maxLength);
 
             // 将当前字符放到map中
