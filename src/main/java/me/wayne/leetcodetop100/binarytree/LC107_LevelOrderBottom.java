@@ -13,6 +13,7 @@ import me.wayne.leetcodetop100.TreeNode;
  * （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
  * <p>
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
+ * 思路：层次遍历的时候，每次添加结果List<Integer>列表都添加到第0个
  */
 public class LC107_LevelOrderBottom {
 
