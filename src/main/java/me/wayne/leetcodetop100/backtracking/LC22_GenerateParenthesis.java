@@ -11,7 +11,7 @@ import java.util.List;
  * <p>
  * https://leetcode-cn.com/problems/generate-parentheses/
  * <p>
- * 思路：使用回溯法，左括号数 > n，左括号数 > n，右括号 > 左括号时结束递归
+ * 思路：使用回溯法，左括号数 > n，右括号 > 左括号时结束递归
  * https://leetcode-cn.com/problems/generate-parentheses/solution/sui-ran-bu-shi-zui-xiu-de-dan-zhi-shao-n-0yt3/
  */
 public class LC22_GenerateParenthesis {
@@ -28,11 +28,11 @@ public class LC22_GenerateParenthesis {
             return;
         }
         if (right > n) {
-            // 有括号数量超了
+            // 右括号数量超了
             return;
         }
         if (right > left) {
-            // 有括号比左括号多了
+            // 右括号比左括号多了
             return;
         }
         if (paths.length() == n * 2) {
