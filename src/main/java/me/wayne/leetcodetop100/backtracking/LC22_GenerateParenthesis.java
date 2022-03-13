@@ -12,7 +12,8 @@ import java.util.List;
  * https://leetcode-cn.com/problems/generate-parentheses/
  * <p>
  * 思路：使用回溯法，左括号数 > n，右括号 > 左括号时结束递归
- * https://leetcode-cn.com/problems/generate-parentheses/solution/sui-ran-bu-shi-zui-xiu-de-dan-zhi-shao-n-0yt3/
+ * https://leetcode-cn.com/problems/generate-parentheses/solution/sui-ran-bu-shi-zui-xiu-de-dan
+ * -zhi-shao-n-0yt3/
  */
 public class LC22_GenerateParenthesis {
 
@@ -22,6 +23,11 @@ public class LC22_GenerateParenthesis {
         return res;
     }
 
+    /**
+     * 实际上是在生成一个树的过程，通过判断左、右括号的数量来return，得到结果就添加到res列表中
+     * 同时return可以返回树的上一层，可以得到结果
+     * 例如paths是(()时，进入49行的递归就return了，再进入50行的递归得到结果(())
+     */
     private void dfs(List<String> res, String paths, int left, int right, int n) {
         if (left > n) {
             // 左括号数量超了
