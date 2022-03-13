@@ -1,6 +1,7 @@
 package me.wayne.leetcodetop100.backtracking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,10 +15,10 @@ import java.util.Map;
  * https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
  */
 public class LC17_LetterCombinations {
+
     public List<String> letterCombinations(String digits) {
-        List<String> res = new ArrayList<>();
-        if (digits == null || digits.length() == 0) {
-            return res;
+        if (digits.length() == 0) {
+            return Collections.emptyList();
         }
 
         Map<Character, String> digitToLetterMap = new HashMap<>();
@@ -30,25 +31,24 @@ public class LC17_LetterCombinations {
         digitToLetterMap.put('8', "tuv");
         digitToLetterMap.put('9', "wxyz");
 
-        StringBuilder path = new StringBuilder();
-        //递归
-        backTracking(path, digitToLetterMap, digits, 0, res);
-        return res;
+        List<String> ans = new ArrayList<>();
+        dfs(digitToLetterMap, ans, digits, 0, new StringBuilder());
+        return ans;
     }
 
-    private void backTracking(StringBuilder path, Map<Character, String> map, String digits,
-            int dept, List<String> res) {
-        if (digits.length() == dept) {
-            res.add(path.toString());
+    private void dfs(Map<Character, String> map, List<String> ans, String digits, int depth,
+            StringBuilder path) {
+        if (path.length() == digits.length()) {
+            ans.add(path.toString());
             return;
         }
 
-        char digit = digits.charAt(dept);
-        String letters = map.get(digit);
+        char ch = digits.charAt(depth);
+        String letters = map.get(ch);
         for (int i = 0; i < letters.length(); i++) {
             path.append(letters.charAt(i));
-            backTracking(path, map, digits, dept + 1, res);
-            path.deleteCharAt(dept);
+            dfs(map, ans, digits, depth + 1, path);
+            path.deleteCharAt(path.length() - 1);
         }
     }
 }
