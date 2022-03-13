@@ -24,12 +24,33 @@ public class LC78_Subsets {
             for (int j = 0; j < nums.length; j++) {
                 // 根据i的值，每次遍历nums中的[0, len - 1]
                 // 判断i的值中j这一位是否是1，如果是1就放到list中
-                if (((1 << j) & i ) != 0) {
+                if (((1 << j) & i) != 0) {
                     list.add(nums[j]);
                 }
             }
             ans.add(new ArrayList<>(list));
         }
         return ans;
+    }
+
+    public List<List<Integer>> subsets2(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i <= nums.length; i++) {
+            dfs(ans, new ArrayList<>(), nums, i, 0);
+        }
+        return ans;
+    }
+
+    private void dfs(List<List<Integer>> ans, List<Integer> path, int[] nums, int len, int index) {
+        if (path.size() == len) {
+            ans.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = index; i < nums.length; i++) {
+            path.add(nums[i]);
+            dfs(ans, path, nums, len, i + 1);
+            path.remove(path.size() - 1);
+        }
     }
 }
