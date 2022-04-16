@@ -8,7 +8,8 @@ group = "me.wayne"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
+    maven("https://maven.aliyun.com/repository/central")
+    maven("https://maven.aliyun.com/repository/google")
 }
 
 dependencies {
