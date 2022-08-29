@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * 将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。
- * <p>
+ * 思路：纵向(上到下或者下到上)扫描提供的字符串，每次到底或者到顶了就换一个方向即可。
+ * 特殊情况：如果只有一列，则直接返回提供的字符串。
  * https://leetcode-cn.com/problems/zigzag-conversion/
  */
 public class LC6_Convert {
