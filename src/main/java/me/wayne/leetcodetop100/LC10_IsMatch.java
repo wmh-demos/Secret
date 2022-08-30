@@ -36,7 +36,7 @@ public class LC10_IsMatch {
         return dp[m][n];
     }
 
-    public boolean matches(String s, String p, int i, int j) {
+    private boolean matches(String s, String p, int i, int j) {
         if (i == 0) {
             return false;
         }
