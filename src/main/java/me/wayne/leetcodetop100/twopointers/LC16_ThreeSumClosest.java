@@ -8,6 +8,11 @@ import java.util.Arrays;
  * 假定每组输入只存在恰好一个解。
  * <p>
  * 链接：https://leetcode-cn.com/problems/3sum-closest
+ * 思路：
+ * 利用双指针，先将数组进行排序。
+ * 定义一个i，从0遍历到nums.length - 2，start = i + 1，end = nums.length - 1。
+ * 计算nums[i] + nums[start] + nums[end]的和，如和比target小，则start指针前进。
+ * 若和比target大，则end指针后退。
  */
 public class LC16_ThreeSumClosest {
 
