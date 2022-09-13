@@ -13,7 +13,7 @@ object Main {
 
     private fun calculateTotal() {
         var total = 0F
-        val lines = readFileAndReadAsLine("/Users/wayne/workspace/github/Secret/money.txt")
+        val lines = readFileAndReadAsLine("money.txt")
         lines.forEach {
             val index = it.indexOf("￥")
             if (index >= 0 && index < it.length - 1) {
