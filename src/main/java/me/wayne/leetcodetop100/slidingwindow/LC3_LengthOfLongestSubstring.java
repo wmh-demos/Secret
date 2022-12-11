@@ -23,13 +23,13 @@ import java.util.Map;
 public class LC3_LengthOfLongestSubstring {
 
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> charToIndexMap = new HashMap<>();
         int maxLength = 0, left = 0, right;
         for (right = 0; right < s.length(); right++) {
             char ch = s.charAt(right);
-            if (map.containsKey(ch)) {
+            if (charToIndexMap.containsKey(ch)) {
                 // 已重复字符当前下标
-                int lastChIndex = map.get(ch);
+                int lastChIndex = charToIndexMap.get(ch);
                 //避免出现左指针回退的情况，所以使用Math.max，如"abba"，右指针滑动到第二个b时，左指针也应该滑动到第二个b
                 //然后再滑到到第二个a时，如果不加Math.max，左指针又滑动到第一个b了，不符合预期
                 left = Math.max(lastChIndex + 1, left);
@@ -38,7 +38,7 @@ public class LC3_LengthOfLongestSubstring {
             maxLength = Math.max(right - left + 1, maxLength);
 
             // 将当前字符放到map中
-            map.put(ch, right);
+            charToIndexMap.put(ch, right);
         }
         return maxLength;
     }
