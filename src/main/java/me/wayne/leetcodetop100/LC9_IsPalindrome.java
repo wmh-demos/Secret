@@ -9,7 +9,7 @@ package me.wayne.leetcodetop100;
  * <p>
  * 链接：https://leetcode-cn.com/problems/palindrome-number
  */
-class LC9_IsPalindrome {
+public class LC9_IsPalindrome {
 
     public boolean isPalindrome(int x) {
         if (x < 0) {
