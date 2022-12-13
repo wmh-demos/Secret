@@ -15,7 +15,9 @@ public class LC10_IsMatch {
         int m = s.length();
         int n = p.length();
 
+        // 表示s的前i个字符与p中的前j个字符是否能够匹配
         boolean[][] dp = new boolean[m + 1][n + 1];
+        // 表示s与p均为空串
         dp[0][0] = true;
         for (int i = 0; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
