@@ -16,6 +16,7 @@ public class LC10_IsMatch {
         int n = p.length();
 
         // 表示s的前i个字符与p中的前j个字符是否能够匹配
+        // 数组是从下标0开始的，因此长度需要加1
         boolean[][] dp = new boolean[m + 1][n + 1];
         // 表示s与p均为空串
         dp[0][0] = true;
