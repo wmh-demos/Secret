@@ -24,7 +24,7 @@ public class LC18_FourSum {
     }
 
     private void dfs(List<List<Integer>> ans, List<Integer> path, int[] nums, int index,
-            int target) {
+            long target) {
         if (nums.length - index + path.size() < 4) {
             return;
         }
@@ -40,9 +40,20 @@ public class LC18_FourSum {
             if (index != i && nums[i - 1] == nums[i]) {
                 continue;
             }
-
             int newIndex = i + 1;
-            int newTarget = target - value;
+            long newTarget = target - value;
+
+            if (i < nums.length - 1) {
+                // 下一个数*剩余个数大于newTarget，说明后面的数都不满足了，剪枝
+                if ((long) (3 - path.size()) * nums[i + 1] > newTarget) {
+                    return;
+                }
+                // 最大的数*剩余个数小于newTarget，说明当前的数不满足，剪枝，直接跳过
+                if ((long) (3 - path.size()) * nums[nums.length - 1] < newTarget) {
+                    continue;
+                }
+            }
+
             path.add(value);
             dfs(ans, path, nums, newIndex, newTarget);
             path.remove(path.size() - 1);
