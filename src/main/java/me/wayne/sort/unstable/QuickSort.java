@@ -52,7 +52,7 @@ public class QuickSort {
     }
 
     private static void nonRecursionSort(List<Integer> data) {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
 
         int start = 0, end = data.size() - 1, partition;
         stack.push(start);
