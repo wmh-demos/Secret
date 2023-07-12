@@ -8,6 +8,19 @@ import java.io.FileNotFoundException
 import java.io.IOException
 
 @Throws(FileNotFoundException::class, IOException::class)
+fun copyFile(sourceFile: File?, targetFile: File?) {
+    if (sourceFile == null || targetFile == null) {
+        return
+    }
+
+    sourceFile.source().use { source ->
+        targetFile.sink().buffer().use {
+            it.writeAll(source)
+        }
+    }
+}
+
+@Throws(FileNotFoundException::class, IOException::class)
 fun readFileAsString(file: File?): String? {
     if (file == null) {
         return null
