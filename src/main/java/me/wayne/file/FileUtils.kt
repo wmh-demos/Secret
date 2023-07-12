@@ -1,6 +1,7 @@
 package me.wayne.file
 
 import okio.buffer
+import okio.sink
 import okio.source
 import java.io.File
 import java.io.FileNotFoundException
@@ -18,6 +19,17 @@ fun readFileAndReadAsLineV2(dir: String): MutableList<String> {
         }
     }
     return result
+}
+
+@Throws(FileNotFoundException::class, IOException::class)
+fun writeFile(file: File?, content: String?) {
+    if (file == null || content == null) {
+        return
+    }
+
+    file.sink().use { sink ->
+        sink.buffer().writeUtf8(content)
+    }
 }
 
 fun readFileAndReadAsLine(dir: String): MutableList<String> {
