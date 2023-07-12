@@ -1,6 +1,24 @@
 package me.wayne.file
 
+import okio.buffer
+import okio.source
 import java.io.File
+import java.io.FileNotFoundException
+import java.io.IOException
+
+@Throws(FileNotFoundException::class, IOException::class)
+fun readFileAndReadAsLineV2(dir: String): MutableList<String> {
+    val result = mutableListOf<String>()
+    File(dir).source().use { source ->
+        source.buffer().use {
+            while (true) {
+                val line = it.readUtf8Line() ?: break
+                result.add(line)
+            }
+        }
+    }
+    return result
+}
 
 fun readFileAndReadAsLine(dir: String): MutableList<String> {
     val result = mutableListOf<String>()
