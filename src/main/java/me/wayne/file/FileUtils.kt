@@ -8,6 +8,19 @@ import java.io.FileNotFoundException
 import java.io.IOException
 
 @Throws(FileNotFoundException::class, IOException::class)
+fun readFileAsString(file: File?): String? {
+    if (file == null) {
+        return null
+    }
+
+    file.source().use { source ->
+        source.buffer().use {
+            return it.readByteString().utf8()
+        }
+    }
+}
+
+@Throws(FileNotFoundException::class, IOException::class)
 fun readFileAndReadAsLineV2(dir: String): MutableList<String> {
     val result = mutableListOf<String>()
     File(dir).source().use { source ->
